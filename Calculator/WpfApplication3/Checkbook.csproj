@@ -68,6 +68,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\201505051509210_db.cs" />
+    <Compile Include="Migrations\201505051509210_db.Designer.cs">
+      <DependentUpon>201505051509210_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CbDb.cs" />
     <Compile Include="CheckBookVM.cs" />
     <Compile Include="Model\BaseVM.cs" />
@@ -91,6 +96,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201505051509210_db.resx">
+      <DependentUpon>201505051509210_db.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
