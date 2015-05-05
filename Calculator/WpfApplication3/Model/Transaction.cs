@@ -4,14 +4,24 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
+using System.Data.Entity;
 
-namespace Checkbook
+namespace Checkbook.Model
 {
-public class Transaction : BaseVM
+    public class Transaction : BaseVM
     {
         public int Id { get; set; }
 
+
+        /*
+        public IEnumerable<Transaction> SimilarTransactions {
+            get {
+                return from t in VM.Transactions
+                       where t.Payee == this.Payee
+                       select t;
+            }
+        }
+        */
         private DateTime _Date;
         public DateTime Date
         {
@@ -39,7 +49,7 @@ public class Transaction : BaseVM
         public double Amount
         {
             get { return _Amount; }
-            set { _Amount = value; OnPropertyChanged(); }
+            set { _Amount = value; OnPropertyChanged(); OnPropertyChanged("Currency2"); }
         }
 
         private string _Tag;
@@ -61,6 +71,4 @@ public class Transaction : BaseVM
 
         public virtual IList<Transaction> Transactions { get; set; }
     }
-
-   
 }

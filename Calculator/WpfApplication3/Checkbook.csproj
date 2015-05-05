@@ -68,16 +68,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CbDb.cs" />
+    <Compile Include="Model\CbDb.cs" />
     <Compile Include="CheckBookVM.cs" />
-    <Compile Include="Transaction.cs" />
+    <Compile Include="Model\BaseVM.cs" />
+    <Compile Include="Model\Transaction.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
