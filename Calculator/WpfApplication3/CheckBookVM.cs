@@ -7,17 +7,18 @@ using System.Collections.ObjectModel;
 using Checkbook;
 using Checkbook.Model;
 
-namespace Calculator.CheckBook
+namespace Checkbook
 {
     public class CheckBookVM : BaseVM
     {
         public CheckBookVM()
         {
+            
         }
 
         CbDb _Db = new CbDb();
 
-        private int _RowsPerPage = 5;
+        private int _RowsPerPage = 10;
         private int _CurrentPage = 1;
         public int CurrentPage
         {
@@ -105,9 +106,11 @@ namespace Calculator.CheckBook
 
 
         public void Fill()
-        {
-          
-            OnPropertyChanged("CurrentTransactions"); OnPropertyChanged("Transactions");
-        }
+       {
+            Transactions = _Db.Transactions.Local;
+            _Db.Accounts.ToList();
+            _Db.Transactions.ToList();
+            //new ObservableCollection<Transaction>();
+            }
     }
 }

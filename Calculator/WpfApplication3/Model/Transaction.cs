@@ -12,16 +12,6 @@ namespace Checkbook.Model
     {
         public int Id { get; set; }
 
-
-        /*
-        public IEnumerable<Transaction> SimilarTransactions {
-            get {
-                return from t in VM.Transactions
-                       where t.Payee == this.Payee
-                       select t;
-            }
-        }
-        */
         private DateTime _Date;
         public DateTime Date
         {

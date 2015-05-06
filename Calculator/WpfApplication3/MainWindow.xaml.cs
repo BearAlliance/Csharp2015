@@ -1,4 +1,4 @@
-﻿using Calculator.CheckBook;
+﻿using Checkbook;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +30,7 @@ namespace Checkbook
         {
             var VM = new CheckBookVM();
             DataContext = VM;
-            //VM.Fill();
+            VM.Fill();
         }
     }
 }
