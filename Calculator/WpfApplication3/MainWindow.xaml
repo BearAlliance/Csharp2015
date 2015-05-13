@@ -20,7 +20,7 @@
 
         <Image Height="50" Width="50" Source="{Binding Picture}" HorizontalAlignment="Left" VerticalAlignment="Top" />
         <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="20" Margin="55,0,0,0" />
-        <DataGrid x:Name="transactionsDataGrid" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding CurrentTransactions}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="-2,0,7,2" Height="404" VerticalAlignment="Bottom" Grid.RowSpan="2">
+        <DataGrid x:Name="transactionsDataGrid" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Transactions}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="-2,0,7,2" Height="404" VerticalAlignment="Bottom" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Account.Name}" Header="Account" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="amountColumn" Binding="{Binding Amount}" Header="Amount" Width="SizeToHeader"/>
@@ -103,8 +103,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Grid.Row="2" Text="{Binding CurrentPage}" Margin="111,0,77,0"></TextBox>
-        <Button Grid.Row="2" Command="{Binding MoveNext}" Margin="0,0,101,0" HorizontalAlignment="Right" Width="40" >&gt;</Button>
         <Button Grid.Row="2" Command="{Binding NewTransaction}" Margin="0,0,56,0" HorizontalAlignment="Right" Width="40" >New</Button>
         <Button Grid.Row="2" Grid.Column="2" Command="{Binding Save}" Margin="0,0,18,0" HorizontalAlignment="Right" Width="40" >Save</Button>
     </Grid>
