@@ -10,6 +10,7 @@ namespace Checkbook.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Checkbook.Model.CbDb";
         }
 
         protected override void Seed(Checkbook.Model.CbDb context)

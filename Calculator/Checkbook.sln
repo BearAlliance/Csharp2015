@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "WpfApplication2\Calculator.csproj", "{B2290B4B-EDE8-4B29-9F5C-A4E56D1C32E8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkbook", "WpfApplication3\Checkbook.csproj", "{73CE9AF0-CF52-419F-87C5-9E5CA170E5C8}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2290B4B-EDE8-4B29-9F5C-A4E56D1C32E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2290B4B-EDE8-4B29-9F5C-A4E56D1C32E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2290B4B-EDE8-4B29-9F5C-A4E56D1C32E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2290B4B-EDE8-4B29-9F5C-A4E56D1C32E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73CE9AF0-CF52-419F-87C5-9E5CA170E5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73CE9AF0-CF52-419F-87C5-9E5CA170E5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73CE9AF0-CF52-419F-87C5-9E5CA170E5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU

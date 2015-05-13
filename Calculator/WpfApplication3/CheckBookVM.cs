@@ -13,12 +13,11 @@ namespace Checkbook
     {
         public CheckBookVM()
         {
-            
         }
 
         CbDb _Db = new CbDb();
 
-        private int _RowsPerPage = 10;
+        private int _RowsPerPage = 5;
         private int _CurrentPage = 1;
         public int CurrentPage
         {
@@ -82,35 +81,12 @@ namespace Checkbook
             }
         }
 
-        private string _Name;
-
-        public string Name
-        {
-            get { return _Name; }
-            set { _Name = value; OnPropertyChanged(); }
-        }
-        private string _Email;
-
-        public string Email
-        {
-            get { return _Email; }
-            set { _Email = value; OnPropertyChanged(); }
-        }
-        private string _Picture;
-
-        public string Picture
-        {
-            get { return _Picture; }
-            set { _Picture = value; OnPropertyChanged(); }
-        }
-
-
         public void Fill()
-       {
+        {
             Transactions = _Db.Transactions.Local;
             _Db.Accounts.ToList();
             _Db.Transactions.ToList();
-            //new ObservableCollection<Transaction>();
-            }
+            new ObservableCollection<Transaction>();
+        }
     }
 }

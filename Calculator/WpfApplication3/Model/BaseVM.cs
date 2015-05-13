@@ -21,6 +21,7 @@ namespace Checkbook.Model
         }
     }
 
+
     public class DelegateCommand : ICommand
     {
 
@@ -35,15 +36,14 @@ namespace Checkbook.Model
                 return true;
         }
 
-        event EventHandler _CanExecuteChanged = (s, e) => { };
         public event EventHandler CanExecuteChanged
         {
-            add { _CanExecuteChanged += value; }
-            remove { _CanExecuteChanged -= value; }
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
         public void OnCanExecuteChanged()
         {
-            _CanExecuteChanged(this, new EventArgs());
+            CommandManager.InvalidateRequerySuggested();
         }
 
         public void Execute(object parameter)

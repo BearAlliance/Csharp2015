@@ -7,13 +7,13 @@ namespace Checkbook.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class db : IMigrationMetadata
+    public sealed partial class db2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(db));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(db2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505051509210_db"; }
+            get { return "201505131445014_db2"; }
         }
         
         string IMigrationMetadata.Source
