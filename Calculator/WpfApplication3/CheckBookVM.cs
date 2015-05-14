@@ -29,6 +29,8 @@ namespace Checkbook
             get { return _Db.Accounts.Local; }
         }
 
+        public String NewAcct{get; set;}
+
         public DelegateCommand Save
         {
             get
@@ -55,11 +57,30 @@ namespace Checkbook
             }
         }
 
+        public DelegateCommand CreateAccount
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    ExecuteFunction = _ =>
+                    {
+                        _Db.Accounts.Add(new Account {Name= NewAcct });
+                    }
+                };
+            }
+        }
+
+        public float Total { get; set; }
+
+
+
         public void Fill()
         {
             _Transactions = _Db.Transactions.Local;
 
-            _Db.Accounts.Add(new Account());
+            _Db.Accounts.Add(new Account {Name="Checking" });
+            _Db.Accounts.Add(new Account { Name = "Savings" });
             _Db.Accounts.ToList();
             _Db.Transactions.ToList();
             //new ObservableCollection<Transaction>();

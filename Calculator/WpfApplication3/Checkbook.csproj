@@ -76,13 +76,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Migrations\201505131442203_InitialCreate.cs" />
-    <Compile Include="Migrations\201505131442203_InitialCreate.Designer.cs">
-      <DependentUpon>201505131442203_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505131445014_db2.cs" />
-    <Compile Include="Migrations\201505131445014_db2.Designer.cs">
-      <DependentUpon>201505131445014_db2.cs</DependentUpon>
+    <Compile Include="Migrations\201505140248131_db.cs" />
+    <Compile Include="Migrations\201505140248131_db.Designer.cs">
+      <DependentUpon>201505140248131_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CbDb.cs" />
@@ -108,11 +104,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201505131442203_InitialCreate.resx">
-      <DependentUpon>201505131442203_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505131445014_db2.resx">
-      <DependentUpon>201505131445014_db2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505140248131_db.resx">
+      <DependentUpon>201505140248131_db.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
