@@ -15,13 +15,47 @@ namespace Checkbook
         {
         }
 
+        string maxPayer;
         CbDb _Db = new CbDb();
 
         private ObservableCollection<Transaction> _Transactions;
         public ObservableCollection<Transaction> Transactions
         {
             get { return _Transactions; }
-            set { _Transactions = value; OnPropertyChanged(); OnPropertyChanged("Transations"); }
+            set { _Transactions = value; OnPropertyChanged(); OnPropertyChanged("Transations");
+            findMaxPayer();
+            }
+        }
+
+        public void findMaxPayer()
+        {
+            
+
+             // Group by payee
+                var payees =
+                from t in Transactions
+                group t by t.Payee;
+
+            // Find the largest single transaction
+            // And set it to maxPayer
+            double maxPay = 0;
+            foreach (var i in Transactions) 
+            {
+                if (i.Amount > maxPay) {
+                    maxPay = i.Amount;
+                    maxPayer = i.Payee.ToString();
+                }
+            }
+            var turnRed = false;
+
+            // If the selected transaction contains the maxPayer as Payee
+            if (maxPayer == SelectedTransaction.Payee.ToString()) {
+                 // Fire an event that triggeres the background to change
+                turnRed = true;
+            }
+            else {
+                turnRed = false;
+            }
         }
 
        // private ObservableCollection<Transaction> _Accounts;
