@@ -21,15 +21,25 @@ namespace Checkbook
         public ObservableCollection<Transaction> Transactions
         {
             get { return _Transactions; }
-            set { _Transactions = value; OnPropertyChanged(); OnPropertyChanged("Accounts"); }
+            set { _Transactions = value; OnPropertyChanged(); OnPropertyChanged("Transations"); }
         }
 
-        public IEnumerable<Account> Accounts
+       // private ObservableCollection<Transaction> _Accounts;
+        //public ObservableCollection<Transaction> Accounts
+        //{
+           // get { return _Accounts; }
+           // set { _Accounts = value; OnPropertyChanged(); OnPropertyChanged("Accounts"); }
+       // }
+
+        public ObservableCollection<Account> Accounts
         {
             get { return _Db.Accounts.Local; }
         }
 
-        public String NewAcct{get; set;}
+        //public IEnumerable<Transaction> Transactions
+        //{
+         //   get { return _Db.Transactions.Local; }
+        //}
 
         public DelegateCommand Save
         {
@@ -51,11 +61,12 @@ namespace Checkbook
                 {
                     ExecuteFunction = _ =>
                     {
-                        Transactions.Add(new Transaction { });
+                        Transactions.Add(new Transaction { Date = DateTime.Now, Account=CurrentAccount });
                     }
                 };
             }
         }
+
 
         public DelegateCommand CreateAccount
         {
@@ -65,13 +76,54 @@ namespace Checkbook
                 {
                     ExecuteFunction = _ =>
                     {
-                        _Db.Accounts.Add(new Account {Name= NewAcct });
+                        _Db.Accounts.Add(new Account { Name = "NewAcct" });
+                        _Db.Accounts.ToList();
                     }
                 };
             }
         }
 
+        public DelegateCommand DeleteAccount
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    ExecuteFunction = _ =>
+                    {
+                        if (CurrentAccount != null)
+                        {
+                            _Db.Accounts.Remove(CurrentAccount);
+                        }
+                        _Db.Accounts.ToList();
+                    }
+                };
+            }
+        }
+
+
+        public DelegateCommand DeleteTransaction
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    ExecuteFunction = _ =>
+                    {
+                        if (SelectedTransaction != null)
+                        {
+                            _Db.Transactions.Remove(SelectedTransaction);
+                        }
+                        _Db.Transactions.ToList();
+                    }
+                };
+            }
+        }
+
+        public Account CurrentAccount { get; set; }
         public float Total { get; set; }
+
+        public Transaction SelectedTransaction { get; set; }
 
 
 
@@ -83,7 +135,6 @@ namespace Checkbook
             _Db.Accounts.Add(new Account { Name = "Savings" });
             _Db.Accounts.ToList();
             _Db.Transactions.ToList();
-            //new ObservableCollection<Transaction>();
         }
     }
 }
